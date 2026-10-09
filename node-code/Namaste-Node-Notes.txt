@@ -1,0 +1,239 @@
+Node Notes Namaste NODE.JS
+15 days
+Start date 31-07-2026
+
+Day 1 - 31-07-2026
+
+EP 1 - Introduction
+
+"Any application that can be written in JavaScript, will eventually be written in JavaScript." -Jeff Atwood(Founder of StackOverflow)
+
+EP 2 - What is Node.JS
+
+What is Node.js?
+Run JavaScript everywhere
+
+Node.js is an open-source and cross-platform JavaScript runtime environment. 
+NodeJS is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+NodeJS help JavaScript to executes JavaScript code outside a web browser.
+
+Node.js® is a free, open-source, cross-platform JavaScript run-time environment—
+that lets developers write command line tools and server-side scripts outside of a browser.
+
+cross-platform - can run on different OS like  Windows, Linux, Unix, macOS, etc.
+open-source platform maintained by OpenJs foundation
+event-driven architecture
+asynchronous I/O or non blocking I/O
+
+History of Node JS
+Ryan Dahl -2009
+-spider monkey(firefox)
+-v8(google chrome)
+joyent - were trying to devlope somethimg simillar with NodeJS
+NPM - Node -2010
+Windows support in 2011. initially it was for Linux and macOS.
+Isaac Z. Schlueter in 2012
+2014 Fedor forked to create io.js.
+2015 io.js and node.js was mergerd to form NodeJS
+2019 JS foundation and NodeJS foundation merged to form OpenJs foundation.
+
+EP 3 - JS on server
+NodeJS, V8 is C++ code
+V8 can be embedded into any C++ application.
+
+NodeJS is a C++ application with V8 embedded into it.
+NodeJS(C++) - V8 + superpower(API, Server call)
+
+ECMASript is standard for scripting languages including JavaScript, JScript, ActionScript. 
+ES6 - EC16 current version
+
+V8 exexutes JavaScript code. follows ECMASript standard.
+
+Day 2 - 04-08-2026
+First Program
+
+REPL - Read, Evaluate, Print, Loop
+
+Day 3 - 05-08-2026
+
+neovim
+
+Day 4 - 30-09-2026
+EP 4 - Module Export & Requirements
+
+install NodeJS
+
+different processes for OS like macOS, Windows, Linux, AIX
+
+Node REPL Read, Evaluate, Print, Loop
+quickest way to run NodeJS code
+run code in repl Module
+
+Wrote first NodeJS program 
+
+window, globalThis object in browser
+global object in NodeJS platform
+
+What is global?
+global is NodeJS-specific and serves as the top-level object containing built-in functions like console and setTimeout.
+It does not exist in browsers, where attempting to access it throws a ReferenceError.​
+This environment-specific nature limits its use to server-side code.
+global is only specific to NodeJS as will give different result based on different enviroment.
+
+What is globalThis?
+So we already saw the problem with global and to solve this globalThis was introduced in ES2020. globalThis is a standardized, 
+cross-platform way to access the global object that works everywhere - browsers (window), Node.js (global), and Web Workers (self).
+
+globalThis solves this by providing one consistent reference across all environments. In global scope, 
+this equals globalThis, making it memorable.​
+
+javascript
+// Inside Node.js
+console.log(globalThis === global); // true
+
+// Inside a web browser
+console.log(globalThis === window); // true
+
+Day 5 - 01/10/2026 
+EP 5 - Diving into the NodeJS Github repo.
+Modules
+
+app.js is entry point
+
+one module can be imported into another module using require(file path).
+when we require any module code of the module will load but you cannot access variable and functions.
+modules protects their variables and functions from leaking.
+
+to access the variable and functions of the module we need to export the module and import.
+
+old and new ways to import and export variable and functions.
+destuctring
+
+default extension used for importing file is .js
+
+Day 6 - 05/10/2026
+
+Common JS modules(cjs) 
+-> module.exports()
+require()
+-> by default used in NodeJS
+-> older way
+-> Synchronous
+-> non strict mode
+
+
+ES Modules(ESM)(mjs)
+-> import
+export
+-> by default used in react, angular
+-> newer way
+-> this will become standard in comming days 24
+-> Asynchronous -powerfull and better
+-> strict mode
+
+Day 7 - 07/10/2026
+Nested modules
+
+module.exports is empty object initially 
+values are later assigned to empty object while exporting
+
+create a separate module index.js we are creating folder structure. 
+for app.js calculate is a module and doesn't need to know how folder structure is defined their.
+
+their are also some inbuilt modules in NodeJS we can use for different functions.
+module is collection of js code(single or multiple files) which is separate and private to itself.
+we can access module data using module.exports.
+
+EP 6 - libuv & async IO
+
+require("./path");
+All the code of the module is wrapped inside a function(IIFE)
+IIFE - Immediately Invoked function Expression
+(function () {})();
+
+privacy - it keeps var and functions safe
+
+Q. How are functions and private in different module?
+because require and wrapping in IIFE
+
+Q. How do you get access to module.exports
+NodeJS passes module as a parameter to the IIFE.
+
+How require works?
+5 steps mechanism of require
+1 resolving the module
+-check path (local, json, node:module)
+2 loading the module
+-file content is loaded according to file type
+3 compile and wrapped inside IIFE
+4 evaluation 
+-return module.exports
+5 caching
+-module is cached
+
+lazy module
+curious 
+check github code of NodeJS code
+
+Day 8 - 08/10/2026 
+EP 7 - sync, async, setTimeoutZero - code
+
+Asynchronous I/O 
+Event driven architecture
+
+JS -> Synchronous, single threaded language
+
+Synchronous
+JavaScript is Synchronous.
+
+Asynchronous
+NodeJS can perform asynchronous with the help of async.
+
+Time, Tide and JavaScript wait for none.
+
+libuv - is a multi-platform C library that provides support for asynchronous I/O based on event loops.
+
+Garbage collection - is the automated process of managing application memory, 
+specifically by freeing up the heap memory occupied by unused or unreachable JavaScript objects.
+
+Day 9 - 09/10/2026 
+EP 8 - Deep dive into v8 JS Engine
+35 min 
+
+
+EP 9 - libuv & Event Loop
+
+
+EP 10 - Thread pool in libuv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+    \po0987654321a
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
